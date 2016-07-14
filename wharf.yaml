@@ -1,34 +1,27 @@
-name: hello_world
-app: server
+name: example-server
 version: 1.0.0
-description: Hello world application
+class: server
+description: Hello world web application
 keywords:
   - web-server
   - http-server
   - server
   - http
   - api
-deps:
-  mongo: mongodb:3.2
-  redis: 1.0
 options:
   app:
     verbose:
       type: boolean
       default: false
+      description: Verbose console output
     greeting:
       type: string
       default: 'world'
-  mysql:
-    user:
-      type: string
-      default: admin
-    pass:
-      type: string
-      secure: true
-    base:
-      type: string
-      default: test
+      description: Greeting message receiver
+    json:
+      type: boolean
+      default: false
+      description: Force json response
 ports:
   server: 8080
   logger: 9000
